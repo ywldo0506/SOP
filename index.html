@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>CX 대응 SOP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#1E2761;
+    --navy-deep:#141A47;
+    --paper:#FFFFFF;
+    --line:#E7E9F2;
+    --muted:#8A8FA8;
+    --ink:#1B1D29;
+    --ready-bg:#F4F5FA;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--paper);
+    font-family:"Noto Sans KR","맑은 고딕",sans-serif;
+    color:var(--ink);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .top{
+    width:100%;
+    max-width:460px;
+    padding:56px 24px 28px;
+    text-align:center;
+  }
+  .eyebrow{
+    font-size:12px;
+    font-weight:700;
+    letter-spacing:.14em;
+    color:var(--navy);
+    text-transform:uppercase;
+    margin-bottom:14px;
+    opacity:.7;
+  }
+  h1{
+    font-size:26px;
+    font-weight:800;
+    margin:0 0 10px;
+    color:var(--navy-deep);
+    letter-spacing:-0.01em;
+  }
+  .sub{
+    font-size:14px;
+    color:var(--muted);
+    line-height:1.6;
+    margin:0;
+  }
+
+  main{
+    width:100%;
+    max-width:460px;
+    padding:8px 20px 60px;
+    display:flex;
+    flex-direction:column;
+    gap:14px;
+  }
+
+  .card{
+    position:relative;
+    display:flex;
+    align-items:center;
+    gap:16px;
+    padding:20px 20px;
+    border-radius:16px;
+    border:1px solid var(--line);
+    background:var(--paper);
+    text-decoration:none;
+    color:inherit;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .card.active{
+    cursor:pointer;
+  }
+  .card.active:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(30,39,97,0.12);
+    border-color:var(--navy);
+  }
+  .card.active:active{
+    transform:translateY(0px);
+    box-shadow:0 4px 12px rgba(30,39,97,0.10);
+  }
+  .card.active:focus-visible{
+    outline:2px solid var(--navy);
+    outline-offset:3px;
+  }
+
+  .card.disabled{
+    background:var(--ready-bg);
+    color:var(--muted);
+    cursor:default;
+    pointer-events:none;
+  }
+
+  .icon{
+    flex:0 0 auto;
+    width:46px;
+    height:46px;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:22px;
+    background:var(--navy);
+    color:#fff;
+  }
+  .card.disabled .icon{
+    background:#DFE1EC;
+    color:#A6ABC2;
+  }
+
+  .text{
+    flex:1 1 auto;
+    min-width:0;
+  }
+  .card-title{
+    font-size:16px;
+    font-weight:700;
+    margin:0 0 3px;
+    color:var(--navy-deep);
+  }
+  .card.disabled .card-title{
+    color:#9297AB;
+  }
+  .card-desc{
+    font-size:12.5px;
+    color:var(--muted);
+    margin:0;
+    line-height:1.4;
+  }
+
+  .badge{
+    flex:0 0 auto;
+    font-size:11px;
+    font-weight:700;
+    padding:5px 10px;
+    border-radius:999px;
+    white-space:nowrap;
+  }
+  .badge.ready{
+    background:#E9ECFB;
+    color:var(--navy);
+  }
+  .badge.soon{
+    background:#EDEEF3;
+    color:#A2A6B8;
+  }
+
+  .arrow{
+    flex:0 0 auto;
+    color:var(--navy);
+    font-size:18px;
+    opacity:.55;
+  }
+  .card.disabled .arrow{
+    opacity:0;
+  }
+
+  footer{
+    padding:0 24px 40px;
+    text-align:center;
+  }
+  footer p{
+    font-size:11.5px;
+    color:var(--muted);
+    margin:0;
+  }
+
+  @media (max-width:360px){
+    h1{font-size:23px;}
+    .card{padding:16px;}
+    .icon{width:40px;height:40px;font-size:19px;}
+  }
+</style>
+</head>
+<body>
+
+  <div class="top">
+    <div class="eyebrow">CX SOP HUB</div>
+    <h1>어떤 상황이신가요?</h1>
+    <p class="sub">해당하는 클레임 유형을 선택하면<br>대응 SOP로 바로 연결됩니다.</p>
+  </div>
+
+  <main>
+
+    <a class="card active" href="https://ywldo0506.github.io/SOP_BK" target="_blank" rel="noopener">
+      <div class="icon">🐛</div>
+      <div class="text">
+        <p class="card-title">해충 클레임</p>
+        <p class="card-desc">초동 대응 절차 · 응대 스크립트</p>
+      </div>
+      <span class="badge ready">바로가기</span>
+      <span class="arrow">›</span>
+    </a>
+
+    <div class="card disabled" aria-disabled="true">
+      <div class="icon">🍽️</div>
+      <div class="text">
+        <p class="card-title">이물질 클레임</p>
+        <p class="card-desc">SOP 준비 중입니다</p>
+      </div>
+      <span class="badge soon">준비중</span>
+      <span class="arrow">›</span>
+    </div>
+
+    <div class="card disabled" aria-disabled="true">
+      <div class="icon">🤒</div>
+      <div class="text">
+        <p class="card-title">장염 클레임</p>
+        <p class="card-desc">SOP 준비 중입니다</p>
+      </div>
+      <span class="badge soon">준비중</span>
+      <span class="arrow">›</span>
+    </div>
+
+  </main>
+
+  <footer>
+    <p>이랜드이츠 CX팀</p>
+  </footer>
+
+</body>
+</html>
